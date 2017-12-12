@@ -1,6 +1,7 @@
 # coding=utf-8
 import requests
 import json
+from pycolor import print_color
 
 
 class Movie(object):
@@ -40,7 +41,13 @@ def print_info(movie):
     barrage = movie.video_review
     duration = movie.duration
     aid = 'http://www.bilibili.com/video/av' + movie.aid
+    """
     string = '片名:{title}\n内容:{descr}\n播放数:{play_time}\n弹幕数:{barrage}\n时长:{duration}\n链接:{aid}'.format(title=title, descr=descr, play_time=play_time, barrage=barrage, duration=duration, aid=aid)
+    print(string)
+    print('=' * 60)
+    """
+    string = '内容:{descr}\n播放数:{play_time}\n弹幕数:{barrage}\n时长:{duration}\n链接:{aid}'.format(descr=descr, play_time=play_time, barrage=barrage, duration=duration, aid=aid)
+    print_color(title, fore='red')
     print(string)
     print('=' * 60)
 
