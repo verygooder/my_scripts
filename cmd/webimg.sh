@@ -1,6 +1,4 @@
 #! /bin/sh
-echo "input img url"
-read IMG
-curl $IMG | imgcat
+curl $1 | imgcat
 clear
 echo "showed"
