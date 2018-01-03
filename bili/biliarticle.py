@@ -58,12 +58,15 @@ class Article(object):
 
 def run():
     count_type = input('1.month\t2.week\t3.day\t4.three_day')
-    info_lst = get_info(count_type)
-    articles = [Article(i) for i in info_lst]
-    sorted(articles, key=lambda x: x.score)
-    articles = list(reversed(articles))
-    for i in articles:
-        i.print_info()
+    if count_type == 'q':
+        exit()
+    else:
+        info_lst = get_info(count_type)
+        articles = [Article(i) for i in info_lst]
+        sorted(articles, key=lambda x: x.score)
+        articles = list(reversed(articles))
+        for i in articles:
+            i.print_info()
 
 
 '''
