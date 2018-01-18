@@ -2,4 +2,4 @@
 /bili/__pycache__/
 /bili/dyn_cookie
 /jandan/*.log
-
+/jandan/result.tsv
