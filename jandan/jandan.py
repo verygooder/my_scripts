@@ -72,6 +72,15 @@ comments = [Comment(i) for i in tag_lst]
 # comments_ok = [i for i in comments if i.target]
 comments_info_string = [
     '\t'.join([str(i.rate), i.url, i.id]) for i in comments]
-with open('./result.tsv', 'w') as f:
+
+with open('./result.tsv', 'r') as f:
+    data = f.readlines()
+    data = [i.strip() for i in data]
+comments_info_string = [i for i in comments_info_string if i not in data]
+
+with open('./result.tsv', 'a') as f:
     for i in comments_info_string:
         f.writelines(i + '\n')
+
+print('%s new items added' % str(len(comments_info_string)))
+
