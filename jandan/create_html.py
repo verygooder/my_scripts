@@ -45,6 +45,7 @@ def generate_pic_html(pic_obj):
     return result
 
 
+'''
 def generate_html():
     pics = sort_pic()
     pics_strings = [generate_pic_html(i) for i in pics]
@@ -54,3 +55,35 @@ def generate_html():
     result = re.sub(r'\<insert\>', pic_html_join, format_html)
     with open('./1.html', 'w') as f:
         f.write(result)
+'''
+
+
+def divide_lst(pics, n):
+    pics = sort_pic()
+    total_pic = len(pics)
+    # pages = total_pic // n
+    result_lst = [pics[m: m + n] for m in range(total_pic) if m % n == 0]
+    return result_lst
+
+
+def generate_a_page_html(index, pages_count, pics_in_the_page):
+    filename = './page' + str(index + 1) + '.html'
+    pics_strings = [generate_pic_html(i) for i in pics_in_the_page]
+    pic_html_join = ''.join(pics_strings)
+    # page_html_format = '<a href="">previous</a>'
+    page_part_htmls = ['<a href="./page%s.html">' % (i) + str(i) + ' </a>' for i in range(1, pages_count + 1)]
+    page_bar = ''.join(page_part_htmls)
+    with open('./format.html', 'r') as f:
+        format_html = f.read()
+    result = re.sub(r'\<insert\>', pic_html_join, format_html)
+    result = re.sub(r'\<page\>', page_bar, result)
+    with open(filename, 'w') as f:
+        f.write(result)
+
+
+def run():
+    pics = sort_pic()
+    pic_divide_lst = divide_lst(pics, 40)
+    pages_count = len(pic_divide_lst)
+    for index, content in enumerate(pic_divide_lst):
+        generate_a_page_html(index, pages_count, content)

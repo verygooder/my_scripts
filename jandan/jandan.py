@@ -6,7 +6,7 @@ from sys import argv
 import re
 import os
 import time
-from create_html import generate_html
+from create_html import run
 
 
 def get_tags(url):
@@ -85,5 +85,5 @@ with open('./result.tsv', 'w') as f:
         f.writelines(i + '\n')
 
 print('%s new items added' % str(len(comments_info_string)))
-generate_html()
+run()
 print('html generate finished')
