@@ -6,6 +6,7 @@ from sys import argv
 import re
 import os
 import time
+from create_html import generate_html
 
 
 def get_tags(url):
@@ -69,18 +70,20 @@ for url in url_lst:
     tag_lst += tags
 driver.quit()
 comments = [Comment(i) for i in tag_lst]
-# comments_ok = [i for i in comments if i.target]
+comments = [i for i in comments if i.url.endswith('gif') is False]  # block gif
 comments_info_string = [
     '\t'.join([str(i.rate), i.url, i.id]) for i in comments]
-
+'''
+# remove reduntant if needed, delete this function for now
 with open('./result.tsv', 'r') as f:
     data = f.readlines()
     data = [i.strip() for i in data]
 comments_info_string = [i for i in comments_info_string if i not in data]
-
-with open('./result.tsv', 'a') as f:
+'''
+with open('./result.tsv', 'w') as f:
     for i in comments_info_string:
         f.writelines(i + '\n')
 
 print('%s new items added' % str(len(comments_info_string)))
-
+generate_html()
+print('html generate finished')
