@@ -36,7 +36,10 @@ class Comment(object):
         def vote_format(x): return int(x[1:-1])
         self.like = vote_format(self.vote_lst[0])
         self.unlike = vote_format(self.vote_lst[1])
-        self.rate = self.like / (self.like + self.unlike) * 100
+        if self.like + self.unlike:
+            self.rate = self.like / (self.like + self.unlike) * 100
+        else:
+            self.rate = 0.01
         self.rate = round(self.rate, 2)
         # self.target = True if self.rate > 90 else False
 
