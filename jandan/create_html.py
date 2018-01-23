@@ -38,7 +38,7 @@ def generate_pic_html(pic_obj):
     # rate = pic_obj.rate
     # pic_id = pic_obj.id
     line1 = '<a target="_blank" href="%s">' % url
-    line2 = '<img src="%s", height="160">' % url
+    line2 = '<img src="%s", height="320">' % url
     line3 = ' '
     line4 = '</a>'
     result = ''.join([line1, line2, line3, line4])
