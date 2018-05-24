@@ -18,7 +18,7 @@ class Red(praw.Reddit):
         hots = list(sub.hot(limit=30))
         hots = sorted(hots, key=lambda x: x.score, reverse=False)
         for i in hots:
-            print_color(i.title, fore='red')
+            print_color(i.title, fore='green')
             items = [str(i.score), i.url]
             string = '\t'.join(items)
             print(string)
