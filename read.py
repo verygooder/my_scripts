@@ -2,6 +2,7 @@
 import re
 import requests
 from bs4 import BeautifulSoup
+from colorama import init, Fore
 
 
 class Book(object):
@@ -49,17 +50,6 @@ class Book(object):
         author = self.get_rid(author)
         return author
 
-    def print_of(self):
-        out_lst = [
-            self.score,
-            self.name,
-            self.author,
-            self.link
-        ]
-        out_lst_format = [str(i) for i in out_lst]
-        string = ' '.join(out_lst_format)
-        return string
-
 
 def get_soup(url='http://readfree.me'):
     headers = {
@@ -93,8 +83,11 @@ if __name__ == '__main__':
     all_soup = [i for x in soup_extracts for i in x]
     books = [Book(i) for i in all_soup]
     books = sorted(books, key=lambda x: float(x.score), reverse=False)
+    init(autoreset=True)
+    style = Fore.GREEN
     for book in books:
-        print(book.print_of())
+        book.score = str(book.score)
+        print(book.score, style + book.name, book.author, book.link)
 
 
 
