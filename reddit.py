@@ -22,6 +22,7 @@ class Red(praw.Reddit):
             items = [str(i.score), i.url]
             string = '\t'.join(items)
             print(string)
+            print('https://www.reddit.com' + i.permalink)
             print('=' * 30)
 
 
