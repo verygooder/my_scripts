@@ -58,7 +58,7 @@ def get_soup(url='http://readfree.me'):
         'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
         'Cache-Control': 'max-age=0',
         'Connection': 'keep-alive',
-        'Cookie': 'sessionid=6dpp4wx0d8f79dgriva0hjb9py7011cx; Hm_lvt_375aa6d601368176e50751c1c6bf0e82=1500264101,1501478607; Hm_lpvt_375aa6d601368176e50751c1c6bf0e82=1501478990; csrftoken=jEboOF25CANnkHdQAfpdh2E4U7ivLE2ywnp1CFbGwJlUTIiWk9HQ3ea311AJLGvR',
+        'Cookie': 'csrftoken=CSpcWowYICfsmrQDI5hvUexBNeLYkpyZHkis9K7VPCwjUPEIWaKKTHMTOyPtE4u3; sessionid=91xkpmafndgzi6ybb1pumry9zkvngdc4',
         'DNT': '1',
         'Host': 'readfree.me',
         'Referer': 'http://readfree.me/accounts/login/?next=/',
