@@ -6,7 +6,7 @@ class Red(praw.Reddit):
     """docstring for Red"""
 
     def __init__(self):
-        super(Red, self).__init__(client_id='GSaafCzmidYIBg', client_secret='STJUANi0ifHpbSQC122a6ks0qLk', username='verygooder', password='Ka840915', user_agent='luo\'s client')
+        super(Red, self).__init__(client_id='GSaafCzmidYIBg', client_secret='STJUANi0ifHpbSQC122a6ks0qLk', username='verygooder', password='Ka840915840915', user_agent='luo\'s client')
         if self.user.me() != 'verygooder':
             print('login error!')
             exit()
