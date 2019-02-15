@@ -51,17 +51,17 @@ class Book(object):
         return author
 
 
-def get_soup(url='http://readfree.me'):
+def get_soup(url='https://readfree.me'):
     headers = {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-        'Accept-Encoding': 'gzip, deflate',
-        'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.6,en;q=0.4',
+        'Accept-Encoding': 'gzip, deflate,br',
+        'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
         'Cache-Control': 'max-age=0',
         'Connection': 'keep-alive',
-        'Cookie': 'csrftoken=fK09aMBKrmO5OjvRQtw0A5F9IPyIQrdswR0zkn7oMF7QHHw2GdTD46ENeMd98XZ4; sessionid=b6vyukik64pf4d6ttxmi9fqbaivr3jrv',
+        'Cookie': 'sessionid=ndi06xstd6v6cqqoflz6ewgchto91e5z; csrftoken=iYcVEerGWmhumTFuwjR8CPk3FMwclTE3ztScjrsRzNMMFz1uC4Khswlf0e3WIKHz',
         'DNT': '1',
         'Host': 'readfree.me',
-        'Referer': 'http://readfree.me/accounts/login/?next=/',
+        # 'Referer': 'http://readfree.me/accounts/login/?next=/',
         'Upgrade-Insecure-Requests': '1',
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
     }
@@ -76,7 +76,7 @@ def extract_books(soup):
 
 
 if __name__ == '__main__':
-    root_url = 'http://readfree.me/?page='
+    root_url = 'https://readfree.me/?page='
     url_lst = [root_url + str(i) for i in range(1, 6)]
     soup_lst = [get_soup(i) for i in url_lst]
     soup_extracts = [extract_books(i) for i in soup_lst]
