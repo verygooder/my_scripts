@@ -1,4 +1,7 @@
 # coding=utf-8
+from readcookie import COOKIE
+
+
 import re
 import requests
 from bs4 import BeautifulSoup
@@ -58,7 +61,7 @@ def get_soup(url='https://readfree.me'):
         'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
         'Cache-Control': 'max-age=0',
         'Connection': 'keep-alive',
-        'Cookie': 'sessionid=um49v9u871uwd4ppuc9qhsc0gaxf81s0; csrftoken=O09vh8X5eECziwWz65Nlftgwc5G1Wh0NkoUKl7eX9N4b4U81kyBz3y4JFfLCfhjN',
+        'Cookie': COOKIE,
         'DNT': '1',
         'Host': 'readfree.me',
         # 'Referer': 'http://readfree.me/accounts/login/?next=/',
