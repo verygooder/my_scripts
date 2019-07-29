@@ -29,10 +29,10 @@ def text_abstract(text):
     tr4s = TextRank4Sentence()
     tr4s.analyze(text)
     sentences_count = len(tr4s.sentences) // 4
-    if sentences_count <= 6:
+    if sentences_count <= 5:
         sentences_num = sentences_count
     else:
-        sentences_num = 6
+        sentences_num = 5
     abstract_sentences = tr4s.get_key_sentences(num=sentences_num)
     abstract_sentences.sort(key=lambda x: x['index'])
     return abstract_sentences
