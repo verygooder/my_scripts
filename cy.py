@@ -6,7 +6,7 @@ from sys import argv
 class Translator(object):
     def __init__(self):
         self.url = "http://api.interpreter.caiyunai.com/v1/translator"
-        self.token = "p1p507xjz96zqd4itudw"
+        self.token = "3975l6lr5pcbvidl6jl2"
         self.headers = {
             'content-type': "application/json",
             'x-authorization': "token " + self.token
