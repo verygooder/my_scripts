@@ -1,5 +1,6 @@
 import praw
 from pycolor import print_color
+from sys import argv
 
 
 class Red(praw.Reddit):
@@ -28,6 +29,8 @@ class Red(praw.Reddit):
 
 if __name__ == '__main__':
     r = Red()
+    sub = argv[1]
+    r.get_info(sub)
     while 1:
         sub = input('input the subreddit you need to watch:')
         if sub == 'q':
